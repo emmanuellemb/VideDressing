@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Liste</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="accueil.html">Bienvenue</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="accueil.php">Accueil</a></li>
+											<li><a href="pageasso.php">Présentation association</a></li>
+											<li><a href="#">S'inscrire</a></li>
+											<li><a href="#">Se connecter</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>Espace Vente</h2>
+							<p>Soumettez un a un vos articles a vendre </p>
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+
+								<section>
+									<h4>Vetement à vendre</h4>
+
+									<form method="post" action="#">
+										<div class="row gtr-uniform">
+											
+											<div class="col-12">
+												<select name="category" id="category">
+													<option value="">- Category -</option>
+													<option value="1">Tee-shirt</option>
+													<option value="2">Pantalon</option>
+													<option value="3">Jupe</option>
+													<option value="4">chaussures</option>
+													<option value="5">Veste/Manteau</option>
+													<option value="6">Sac</option>
+
+												</select>
+											</div>
+											<div class="size">
+												<input type="radio" id="sizeS" name="sizeS" checked>
+												<label for="small">S</label>
+											
+												<input type="radio" id="sizeM" name="sizeM" >
+												<label for="medium">M</label>
+											
+												<input type="radio" id="sizeL" name="sizeL">
+												<label for="large">L</label>
+
+												<input type="radio" id="sizeXL" name="sizeXL">
+												<label for="extra-large">XL</label>
+											</div >
+											
+											<div class="price">
+												<input type="text" name="price" id="price" placeholder="Entrez un prix">
+											</div>
+											
+											<div class="message">
+												<textarea name="message" id="message" placeholder="Entrez une description" rows="3"></textarea>
+											</div>
+											<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" value="Envoyer" class="primary" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</section>
+
+								
+							</div>
+						</section>
+					</article>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
