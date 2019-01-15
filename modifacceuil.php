@@ -25,7 +25,7 @@ echo $contenu_du_fichier;
 <html lang="fr">
 	<head>
 		<meta charset="utf-8">
-		<title>TEST</title>
+		<title>Vide Dressing</title>
 		<link rel="icon" type="image/ico" href="images/favicon.ico" />
 		 <script src="\ckeditor\ckeditor.js"></script>
 
