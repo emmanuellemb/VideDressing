@@ -29,7 +29,7 @@ ol, ul {
 
 table {
 	border-collapse: collapse;
-	border-spacing: 0;
+	border-spacing: 100;
 }
 
 body {
@@ -697,8 +697,8 @@ input, select, textarea {
 
 		table tbody tr {
 			border: solid 1px #fff;
-			border-left: 0;
-			border-right: 0;
+			border-left: 10;
+			border-right: 10;
 		}
 
 			table tbody tr:nth-child(2n + 1) {
