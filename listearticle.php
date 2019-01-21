@@ -3,6 +3,22 @@
 
 	include 'connectBD.php';
 
+		function genereCodeArticle() {
+			include 'connectBD.php';
+			$req = "select max(codeArticle)+1 from article;";
+			$pdostat = $pdo->query($req);
+			$result = $pdostat->fetchAll(\PDO::FETCH_ASSOC);
+			foreach ($result as $r) {
+				foreach ($r as $d) {
+					$codeArticle = $d;
+				}
+			}
+			while(strlen($codeArticle) < 4) {
+				$codeArticle = '0' . $codeArticle;
+			}
+			echo $codeArticle;
+		}
+
 		function genereId($IdA){
 
   			$id = substr(str_shuffle('1234567890'), 0, 10);
@@ -11,11 +27,11 @@
   				return genereId($IdA);
 		} 
 
-    $codeArticle = // faire fonction pour ;
+    $codeArticle = genereCodeArticle();
     $codeListe = genereId($codeListe) ;
-    $intitulé = $POST['category']
-    $prix = (double)$POST['price']
-    $commentaire = $POST['message']
+    $intitulé = $POST['category'];
+    $prix = (double)$POST['price'];
+    $commentaire = $POST['message'];
     
     $req = $pdo->prepare("INSERT INTO liste (codeListe, statue) VALUES ('$code' , 'Soumise')");
 		$req->bindParam(1, $code);
