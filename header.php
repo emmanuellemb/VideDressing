@@ -23,6 +23,8 @@
 											echo '<li><a href="modifacceuil.php">Modifier Page d\'accueil</a></li>';
 											echo '<li><a href="modifpageasso.php">Modifier Page de Présentation</a></li>';
 											echo '<li><a href="ajoutercompte.php">Ajouter compte client</a></li>';
+											echo '<li><a href="accepterListe.php">Accepter Liste</a></li>';
+											echo '<li><a href="miseEnVente.php">Jour de Vente</a></li>';
 
 										}else{
 
