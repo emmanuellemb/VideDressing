@@ -21,8 +21,8 @@
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
-											<li><a href="accueil.php">Accueil</a></li>
-											<li><a href="pageasso.php">Présentation association</a></li>
+											<li><a href="accueil.html">Accueil</a></li>
+											<li><a href="pageasso.html">Présentation association</a></li>
 											<li><a href="#">S'inscrire</a></li>
 											<li><a href="#">Se connecter</a></li>
 										</ul>
@@ -43,42 +43,47 @@
 
 								<section>
 									<h4>Vetement à vendre</h4>
-
-									<form method="post" action="#">
+									<form method="post" action="listearticle.php">
 										<div class="row gtr-uniform">
 											
 											<div class="col-12">
 												<select name="category" id="category">
 													<option value="">- Category -</option>
-													<option value="1">Tee-shirt</option>
-													<option value="2">Pantalon</option>
-													<option value="3">Jupe</option>
-													<option value="4">chaussures</option>
-													<option value="5">Veste/Manteau</option>
-													<option value="6">Sac</option>
+													<option value="Tee-shirt">Tee-shirt</option>
+													<option value="Pantalon">Pantalon</option>
+													<option value="Jupe">Jupe</option>
+													<option value="Chaussures">chaussures</option>
+													<option value="Veste">Veste/Manteau</option>
+													<option value="Sac">Sac</option>
 
 												</select>
 											</div>
-											<div class="size">
-												<input type="radio" id="sizeS" name="sizeS" checked>
-												<label for="small">S</label>
-											
-												<input type="radio" id="sizeM" name="sizeM" >
-												<label for="medium">M</label>
-											
-												<input type="radio" id="sizeL" name="sizeL">
-												<label for="large">L</label>
 
-												<input type="radio" id="sizeXL" name="sizeXL">
-												<label for="extra-large">XL</label>
-											</div >
-											
-											<div class="price">
-												<input type="text" name="price" id="price" placeholder="Entrez un prix">
+
+											<div class="size">
+
+												<select name="size" id="size">
+													<option value="">- Choisissez la taille -</option>
+													<option value="XS">XS</option>
+													<option value="S">S</option>
+													<option value="M">M</option>
+													<option value="L">L</option>
+													<option value="XL">XL</option>
+													<option value="XXL">XXL</option>
+
+												</select>
+
+
+											</div>	
+												
+											</div class ="price">
+											<input type="text" name="price" id="price" placeholder="Entrez un prix" required>
+											<div>
+												
 											</div>
 											
 											<div class="message">
-												<textarea name="message" id="message" placeholder="Entrez une description" rows="3"></textarea>
+												<textarea name="message" id="message" placeholder="Entrez une description" rows="3" required ></textarea>
 											</div>
 											<div class="col-12">
 												<ul class="actions">
