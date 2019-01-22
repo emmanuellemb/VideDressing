@@ -25,6 +25,7 @@
 											echo '<li><a href="ajoutercompte.php">Ajouter compte client</a></li>';
 											echo '<li><a href="accepterListe.php">Accepter Liste</a></li>';
 											echo '<li><a href="miseEnVente.php">Jour de Vente</a></li>';
+											echo '<li><a href="vente.php">La vente</a></li>';
 
 										}else{
 

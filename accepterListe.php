@@ -10,6 +10,21 @@
 
 	</head>
 
+	<body class="landing is-preload">
+            <?php
+                session_start();
+
+               	include 'header.php';
+             ?>
+
+        <!-- Scripts -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/jquery.scrolly.min.js"></script>
+            <script src="assets/js/breakpoints.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+            <script src="assets/js/validation.js"></script>
+
 
 
 <?php
@@ -42,4 +57,5 @@ echo '</table>';
 
 
 
-?> 
+?> </body>
+</html>

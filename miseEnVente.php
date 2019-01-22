@@ -10,6 +10,23 @@
 
 	</head>
 
+<body class="landing is-preload">
+            <?php
+                session_start();
+            ?>
+          
+
+                <?php
+                    include 'header.php';
+                ?>
+
+        <!-- Scripts -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/jquery.scrolly.min.js"></script>
+            <script src="assets/js/breakpoints.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+            <script src="assets/js/validation.js"></script>
 
 
 <?php
@@ -45,16 +62,7 @@ while ($row = $req->fetch(PDO::FETCH_ASSOC)){
 		echo "<a href=miseEnVente3.php?id=".$row['codeListe']."&id2=".$row2['codeArticle']."><input type=\"submit\" value=\"Vêtement non fourni\" ></a>";
 
 		echo '</th></tr>';
-
-
-
-
     }
-
-
-
-
-	
 
 }
 
@@ -63,4 +71,4 @@ echo '</table>';
 
 
 
-?> 
+?> </body></html>
