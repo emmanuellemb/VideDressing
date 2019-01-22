@@ -33,13 +33,13 @@
     $prix = (double)$POST['price'];
     $commentaire = $POST['message'];
     
-    $req = $pdo->prepare("INSERT INTO liste (codeListe, statue) VALUES ('$code' , 'Soumise')");
+    $req = $pdo->prepare("INSERT INTO liste(codeListe, statue) VALUES ('$code' , 'Soumise')");
 		$req->bindParam(1, $code);
 		$req->bindParam(2,'Soumise');
 		$req->execute();
 
 
-  	$req2 = $pdo->prepare("INSERT INTO liste (codeArticle, codeListe, intitulé, prix, statue, commentaire) VALUES ('$codeArticle' ,'$codeListe','$intitulé', '$prix',
+  	$req2 = $pdo->prepare("INSERT INTO article(codeArticle, codeListe, intitulé, prix, statue, commentaire) VALUES ('$codeArticle' ,'$codeListe','$intitulé', '$prix',
   		'en vente','$commentaire')");
 		$req2->bindParam(1, $codeArticle);
 		$req2->bindParam(2,$code);
