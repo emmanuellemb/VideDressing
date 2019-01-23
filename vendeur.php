@@ -9,11 +9,8 @@
 		$req = "select codeVendeur from vendeur where codeVendeur = '" . $code . "';";
 		$pdostat = $pdo->query($req);
 		$result = $pdostat->fetchAll(\PDO::FETCH_ASSOC);
-		foreach ($result as $r) {
-			if(empty($r['codeVendeur'])) {
-				return $code;
-			}
-		}
+		if(empty($result))
+			return $code;
 		foreach(range('A','Z') as $v){
     		$codebis = $code . $v;
     		$req = "select codeVendeur from vendeur where codeVendeur = '" . $codebis . "';";
@@ -35,6 +32,7 @@
 	$req = "insert into vendeur values('" . $code . "', '" . $_SESSION['mail'] . "');";
 	$pdostat = $pdo->query($req);
 	$_SESSION['vendeur'] = true;
+	$_SESSION['codeVendeur'] = $code;
 
 	header('Location: accueil.php');
 ?>
