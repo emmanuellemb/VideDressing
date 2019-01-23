@@ -1,0 +1,72 @@
+INSERT INTO users(email,firstname, lastname, password) VALUES ('admin@gmail.com','admin','admin', '1234'); 
+INSERT INTO vendeur(codeVendeur, email) VALUES ('0465A' , (SELECT email FROM users where email = 'admin@gmail.com') );
+INSERT INTO liste(codeListe,codeVendeur,statut) VALUES ('0235',(select codeVendeur from vendeur where codeVendeur = '0465A') , 'acceptee');
+INSERT INTO article(codeArticle, codeListe, intitule, prix, statut, commentaire) VALUES ('0121' ,(select codeListe from liste where codeListe = '0235'),'Tee-Shirt', '20', 'invendu','jolie');
+
+INSERT INTO users(email,firstname, lastname, password) VALUES ('damien@gmail.com' , 'damien', 'cantin', '1234'); 
+INSERT INTO vendeur(codeVendeur, email) VALUES ('0015A' , (SELECT email FROM users where email = 'damien@gmail.com') );
+INSERT INTO liste(codeListe,codeVendeur,statut) VALUES ('0001',(select codeVendeur from vendeur where codeVendeur = '0015A') , 'soumise');
+INSERT INTO article(codeArticle, codeListe, intitule, prix, statut, commentaire) VALUES ('1001' ,(select codeListe from liste where codeListe = '0001'),'Tee-Shirt', '20', 'en vente','jolie');
+INSERT INTO article(codeArticle, codeListe, intitule, prix, statut, commentaire) VALUES ('1101' ,(select codeListe from liste where codeListe = '0001'),'Pantalon', '15', 'en vente','beau');
+
+INSERT INTO users(email,firstname, lastname, password) VALUES ('charly@gmail.com' , 'charly', 'columbu', '1234'); 
+INSERT INTO vendeur(codeVendeur, email) VALUES ('1455A' , (SELECT email FROM users where email = 'charly@gmail.com') );
+INSERT INTO liste(codeListe,codeVendeur,statut) VALUES ('0002',(select codeVendeur from vendeur where codeVendeur = '1455A') , 'en vente');
+INSERT INTO article(codeArticle, codeListe, intitule, prix, statut, commentaire) VALUES ('1002' ,(select codeListe from liste where codeListe = '0002'),'Tee-Shirt', '20', 'en vente','jolie');
+INSERT INTO article(codeArticle, codeListe, intitule, prix, statut, commentaire) VALUES ('1102' ,(select codeListe from liste where codeListe = '0002'),'chaussure', '40', 'vendu','serré');
+
+INSERT INTO users(email,firstname, lastname, password) VALUES ('manu@gmail.com' , 'manu', 'mb', '1234'); 
+INSERT INTO vendeur(codeVendeur, email) VALUES ('1682A' , (SELECT email FROM users where email = 'manu@gmail.com') );
+INSERT INTO liste(codeListe,codeVendeur,statut) VALUES ('0003',(select codeVendeur from vendeur where codeVendeur = '1682A') , 'acceptee');
+INSERT INTO article(codeArticle, codeListe, intitule, prix, statut, commentaire) VALUES ('1003' ,(select codeListe from liste where codeListe = '0003'),'Tee-Shirt', '20', 'invendu','jolie');
+
+INSERT INTO users(email,firstname, lastname, password) VALUES ('gg@gmail.com' , 'gerard', 'gogo', '1234'); 
+INSERT INTO vendeur(codeVendeur, email) VALUES ('0154B' , (SELECT email FROM users where email = 'gg@gmail.com') );
+INSERT INTO liste(codeListe,codeVendeur,statut) VALUES ('0004',(select codeVendeur from vendeur where codeVendeur = '0154B') , 'soumise');
+INSERT INTO article(codeArticle, codeListe, intitule, prix, statut, commentaire) VALUES ('1004' ,(select codeListe from liste where codeListe = '0004'),'Sac', '14', 'en vente','jolie');
+INSERT INTO article(codeArticle, codeListe, intitule, prix, statut, commentaire) VALUES ('1104' ,(select codeListe from liste where codeListe = '0004'),'Sac', '30', 'en vente','jolie');
+
+INSERT INTO users(email,firstname, lastname, password) VALUES ('hihi@gmail.com' , 'hidan', 'akatsu', '1234'); 
+INSERT INTO vendeur(codeVendeur, email) VALUES ('0465B' , (SELECT email FROM users where email = 'hihi@gmail.com') );
+INSERT INTO liste(codeListe,codeVendeur,statut) VALUES ('0005',(select codeVendeur from vendeur where codeVendeur = '0465B') , 'acceptee');
+INSERT INTO article(codeArticle, codeListe, intitule, prix, statut, commentaire) VALUES ('1005' ,(select codeListe from liste where codeListe = '0005'),'Tee-Shirt', '20', 'en vente','jolie');
+
+INSERT INTO users(email,firstname, lastname, password) VALUES ('naru@gmail.com' , 'naruto', 'cantin', '1234'); 
+INSERT INTO vendeur(codeVendeur, email) VALUES ('0465C' , (SELECT email FROM users where email = 'naru@gmail.com') );
+INSERT INTO liste(codeListe,codeVendeur,statut) VALUES ('0006',(select codeVendeur from vendeur where codeVendeur = '0465C') , 'Soumise');
+INSERT INTO article(codeArticle, codeListe, intitule, prix, statut, commentaire) VALUES ('1006' ,(select codeListe from liste where codeListe = '0006'),'Tee-Shirt', '20', 'en vente','jolie');
+
+INSERT INTO users(email,firstname, lastname, password) VALUES ('lili@gmail.com' , 'lili', 'rose', '1234'); 
+INSERT INTO vendeur(codeVendeur, email) VALUES ('0465D' , (SELECT email FROM users where email = 'lili@gmail.com') );
+INSERT INTO liste(codeListe,codeVendeur,statut) VALUES ('0007',(select codeVendeur from vendeur where codeVendeur = '0465D') , 'Soumise');
+INSERT INTO article(codeArticle, codeListe, intitule, prix, statut, commentaire) VALUES ('1007' ,(select codeListe from liste where codeListe = '0007'),'Robe', '20', 'retire de la vente','jolie');
+
+INSERT INTO users(email,firstname, lastname, password) VALUES ('frida@gmail.com' , 'frida', 'kahlo', '1234'); 
+INSERT INTO vendeur(codeVendeur, email) VALUES ('0465E' , (SELECT email FROM users where email = 'frida@gmail.com') );
+INSERT INTO liste(codeListe,codeVendeur,statut) VALUES ('0008',(select codeVendeur from vendeur where codeVendeur = '0465E') , 'Soumise');
+INSERT INTO article(codeArticle, codeListe, intitule, prix, statut, commentaire) VALUES ('1008' ,(select codeListe from liste where codeListe = '0008'),'Tee-Shirt', '20', 'non fourni','jolie');
+
+INSERT INTO users(email,firstname, lastname, password) VALUES ('hannah@gmail.com' , 'hannah', 'montana', '1234'); 
+INSERT INTO vendeur(codeVendeur, email) VALUES ('0465F' , (SELECT email FROM users where email = 'hannah@gmail.com') );
+INSERT INTO liste(codeListe,codeVendeur,statut) VALUES ('0009',(select codeVendeur from vendeur where codeVendeur = '0465F') , 'Soumise');
+INSERT INTO article(codeArticle, codeListe, intitule, prix, statut, commentaire) VALUES ('0648' ,(select codeListe from liste where codeListe = '0009'),'Pantalon', '7', 'en vente','jolie');
+
+INSERT INTO users(email,firstname, lastname, password) VALUES ('deedee@gmail.com' , 'deena', 'dede', '1234'); 
+INSERT INTO vendeur(codeVendeur, email) VALUES ('0465G' , (SELECT email FROM users where email = 'deedee@gmail.com') );
+INSERT INTO liste(codeListe,codeVendeur,statut) VALUES ('0010',(select codeVendeur from vendeur where codeVendeur = '0465G') , 'en vente');
+INSERT INTO article(codeArticle, codeListe, intitule, prix, statut, commentaire) VALUES ('1010' ,(select codeListe from liste where codeListe = '0010'),'Sac', '20', 'vendu','jolie');
+
+INSERT INTO users(email,firstname, lastname, password) VALUES ('pascal@gmail.com' , 'pas', 'cal', '1234'); 
+INSERT INTO vendeur(codeVendeur, email) VALUES ('0465H' , (SELECT email FROM users where email = 'pascal@gmail.com') );
+INSERT INTO liste(codeListe,codeVendeur,statut) VALUES ('0011',(select codeVendeur from vendeur where codeVendeur = '0465H') , 'soumise');
+INSERT INTO article(codeArticle, codeListe, intitule, prix, statut, commentaire) VALUES ('1011' ,(select codeListe from liste where codeListe = '0011'),'Tee-Shirt', '20', 'retire de la vente','jolie');
+
+INSERT INTO users(email,firstname, lastname, password) VALUES ('emma@gmail.com' , 'emma', 'amme', '1234'); 
+INSERT INTO vendeur(codeVendeur, email) VALUES ('0465F' , (SELECT email FROM users where email = 'emma@gmail.com') );
+INSERT INTO liste(codeListe,codeVendeur,statut) VALUES ('0012',(select codeVendeur from vendeur where codeVendeur = '0465F') , 'soumise');
+INSERT INTO article(codeArticle, codeListe, intitule, prix, statut, commentaire) VALUES ('1012' ,(select codeListe from liste where codeListe = '0012'),'Jupe', '75', 'en vente','jolie');
+
+INSERT INTO users(email,firstname, lastname, password) VALUES ('gillou@gmail.com' , 'gilles', 'verdz', '1234'); 
+INSERT INTO vendeur(codeVendeur, email) VALUES ('0465I' , (SELECT email FROM users where email = 'gillou@gmail.com') );
+INSERT INTO liste(codeListe,codeVendeur,statut) VALUES ('0013',(select codeVendeur from vendeur where codeVendeur = '0465I') , 'en vente');
+INSERT INTO article(codeArticle, codeListe, intitule, prix, statut, commentaire) VALUES ('1013' ,(select codeListe from liste where codeListe = '0013'),'Tee-shirt','25','en vente','jolie');
