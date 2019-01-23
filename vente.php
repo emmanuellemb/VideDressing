@@ -23,11 +23,14 @@
 
             ?>
 
+                           
              </br>
-             </br> 
-             </br>
+              <table>
+              <thead> 
+              	<tr> 
+              		<th>
 
-             <form>Entrez le code Article :
+             <form> Entrez le code Article :
 
              	 <input type="text" name="idArticle" required>
 
@@ -55,7 +58,7 @@
 
              if(isset($_GET['idArticle'])){
 
-             	 $codeArticle=$_GET['idArticle'];
+             	$codeArticle=$_GET['idArticle'];
 
              	$req = $pdo->prepare("SELECT * FROM article WHERE codeArticle=(?)");
 				$req -> bindParam(1,$codeArticle);
@@ -92,6 +95,66 @@
 
 
              ?>
+
+         	</th><th><form>
+
+             	Entrez le code Article :
+
+             	 <input type="text" name="idArticle2" required>
+
+             	</br>
+
+
+
+
+             	 <input type="submit" name="Retirer" value="Retirer">
+
+             </form>
+
+
+              <?php
+
+
+
+
+             if(isset($_GET['idArticle2'])){
+
+             	$codeArticle=$_GET['idArticle2'];
+
+             	$req = $pdo->prepare("SELECT * FROM article WHERE codeArticle=(?)");
+				$req -> bindParam(1,$codeArticle);
+				$req->execute();
+
+				echo '<table>';
+
+
+				while ($row = $req->fetch(PDO::FETCH_ASSOC)){
+
+					echo '<tr><th>'.$row['codeArticle'].'<th>'.$row['prix'].'</th><th>'.'</th><th>'.$row['statut'].'</th><th>'.$row['commentaire'].'</th><th>';
+
+				
+
+					echo '</tr>';
+
+
+				}
+
+
+				echo '</table>';
+
+
+             }
+
+
+             ?>
+
+
+
+
+
+
+
+         </th></tr>></thead></table>
 
             
 
