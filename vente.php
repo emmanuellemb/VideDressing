@@ -22,11 +22,9 @@
 
 
             ?>
-
-                           
-             </br>
+            <br>
               <table>
-              <thead> 
+              <thead> <tr> <th> <font size='20'> VENDRE  <font> </th> <th> <font size='20'>RETIRER<font> </th></tr> 
               	<tr> 
               		<th>
 
@@ -39,7 +37,7 @@
              	Entrez le nom de l'acheteur
 
 
-             	  <input type="text" name="nomacheteur">
+             	  <input type="text" name="nomacheteur" required><br>
 
 
 
@@ -59,6 +57,7 @@
              if(isset($_GET['idArticle'])){
 
              	$codeArticle=$_GET['idArticle'];
+             	$nomacheteur=$_GET['nomacheteur'];
 
              	$req = $pdo->prepare("SELECT * FROM article WHERE codeArticle=(?) AND statut='en vente'");
 				$req -> bindParam(1,$codeArticle);
@@ -77,6 +76,11 @@
 					$req = $pdo->prepare("UPDATE `article` SET `statut` = 'vendu' WHERE `article`.`codeArticle` = (?) ");
 					$req -> bindParam(1,$codeArticle);
 					$req->execute();
+					$req2 = $pdo->prepare("INSERT INTO acheteur VALUES ((?),(?)) ");
+					$req2-> bindParam(1,$codeArticle);
+					$req2-> bindParam(2,$nomacheteur);
+					$req2->execute();
+
 
 				
 
@@ -139,6 +143,12 @@
 
 					echo '<tr><th>'.$row['codeArticle'].'<th>'.$row['prix'].'</th><th>'.'</th><th>'.$row['statut'].'</th><th>'.$row['commentaire'].'</th>';
 
+
+					echo '<th> <form> <input type="submit" name="retirereArticle" value="Retirer"> </form></th>';
+					$req = $pdo->prepare("UPDATE `article` SET `statut` = 'retire' WHERE `article`.`codeArticle` = (?) ");
+					$req -> bindParam(1,$codeArticle);
+					$req->execute();
+
 				
 
 					echo '</tr>';
@@ -159,13 +169,72 @@
 
 
 
+         </th></tr></thead></table>
 
 
-         </th></tr>></thead></table>
+		<form> <font size='20'> CONSULTER</font><br><br>
+         
+         Saisissez le nom de l'acheteur pour obtenir sa liste d'achat :
 
-            
+         <input type="text" name="nomacheteur" required><br>
+         <input type="submit" name="afficherListe" value="Afficher la liste">
 
-        <!-- Scripts -->
+		</form>
+
+		<?php
+
+
+		 if(isset($_GET['nomacheteur'])){
+
+             	$nomacheteur=$_GET['nomacheteur'];
+
+             	$req = $pdo->prepare("SELECT * FROM acheteur NATURAL JOIN article WHERE nomAcheteur=(?) ");
+				$req -> bindParam(1,$nomacheteur);
+				$req->execute();
+
+				echo "Nom : ";
+
+				echo $nomacheteur;
+
+				echo '<br>';
+
+
+				echo '<table><thead><tr><th> Code Article </th> <th> Commentaire </th> <th> Prix </th> </tr> </thead>';
+
+
+				while ($row = $req->fetch(PDO::FETCH_ASSOC)){
+
+					echo '<tr><th>'.$row['codeArticle'].'<th>'.$row['commentaire'].'</th><th>'.$row['prix'].'</th>';
+
+				}
+
+
+				echo '<tfoot><tr>
+				<th id="total" colspan="2">Total :</th>
+      			<td>';
+
+      			$req2 = $pdo->prepare("SELECT SUM(prix) AS total FROM acheteur NATURAL JOIN article WHERE nomAcheteur=(?) ");
+				$req2-> bindParam(1,$nomacheteur);
+				$req2->execute();
+
+				$row2= $req2->fetch(PDO::FETCH_ASSOC);
+
+				echo $row2['total'];
+
+
+
+      			echo '</td>
+    			</tr></tfoot></table>';
+
+
+			}
+
+
+
+
+
+		?>
+
             <script src="assets/js/jquery.min.js"></script>
             <script src="assets/js/jquery.scrolly.min.js"></script>
             <script src="assets/js/breakpoints.min.js"></script>

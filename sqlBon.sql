@@ -53,8 +53,7 @@ ALTER TABLE article
 DROP TABLE IF EXISTS acheteur;
 CREATE TABLE IF NOT EXISTS acheteur (
   codeArticle varchar(5) NOT NULL,
-  nomAcheteur varchar(30) NOT NULL,
-  PRIMARY KEY (nomAcheteur)
+  nomAcheteur varchar(30) NOT NULL
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 ALTER TABLE acheteur
