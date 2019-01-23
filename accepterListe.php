@@ -33,10 +33,10 @@
 include 'connectBD.php';
 
 
-$req = $pdo->prepare("SELECT * FROM liste, vendeur WHERE statut='soumise'");
+$req = $pdo->prepare("SELECT * FROM liste NATURAL JOIN vendeur WHERE statut='soumise'");
 $req->execute();
 
-echo '<table>';
+echo '<br><br><table>';
 
 while ($row = $req->fetch(PDO::FETCH_ASSOC)){
 
@@ -44,7 +44,7 @@ while ($row = $req->fetch(PDO::FETCH_ASSOC)){
 
 	echo '<tr><th>'.$row['email'].'<th>'.$row['codeVendeur'].'</th><th>'.'</th><th>'.$row['codeListe'].'</th><th>'.$row['statut'].'</th><th>';
 
-	echo "<a href=accepterListe2.php?id=".$row['codeListe']."><input type=\"submit\" value=\"acceptee\" ></a>";
+	echo "<a href=accepterListe2.php?id=".$row['codeListe']."><input type=\"submit\" value=\"Accepter\" ></a>";
 
 	echo '</th></tr>';
 

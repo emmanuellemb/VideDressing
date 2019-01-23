@@ -145,7 +145,7 @@
 
 
 					echo '<th> <form> <input type="submit" name="retirereArticle" value="Retirer"> </form></th>';
-					$req = $pdo->prepare("UPDATE `article` SET `statut` = 'retire' WHERE `article`.`codeArticle` = (?) ");
+					$req = $pdo->prepare("UPDATE `article` SET `statut` = 'retire de la vente' WHERE `article`.`codeArticle` = (?) ");
 					$req -> bindParam(1,$codeArticle);
 					$req->execute();
 

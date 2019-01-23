@@ -38,7 +38,7 @@ include 'connectBD.php';
 $req = $pdo->prepare("SELECT * FROM liste, vendeur WHERE statut='acceptee'");
 $req->execute();
 
-echo '<table>';
+echo '<br> <br><table>';
 
 while ($row = $req->fetch(PDO::FETCH_ASSOC)){
 
