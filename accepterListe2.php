@@ -3,7 +3,7 @@
 
 include 'connectBD.php';
 
-$codeliste=$_GET['id'];
+$codeliste=$_GET['id'];	
 
 echo $codeliste;
 

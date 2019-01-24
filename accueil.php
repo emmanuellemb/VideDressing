@@ -67,13 +67,14 @@
 			$_SESSION['nom'] = $r['lastname'];
 		}
 
-		$req2 = "select email from vendeur where email = '". $_GET['user_mail'] . "';";
+		$req2 = "select codeVendeur, email from vendeur where email = '". $_GET['user_mail'] . "';";
 		$pdostat = $pdo->query($req2);
 		$result2 = $pdostat->fetchAll(\PDO::FETCH_ASSOC);
 		$_SESSION['vendeur'] = false;
 		foreach ($result2 as $r) {
 			if(!empty($r['email'])) {
 				$_SESSION['vendeur'] = true;
+				$_SESSION['codeVendeur'] = $r['codeVendeur'];
 			}
 		}
 	

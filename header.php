@@ -11,7 +11,7 @@
 						<ul>
 							<li><a href="accueil.php">Accueil</a></li>
 							<li><a href="pageasso.php">Présentation association</a></li>
-							<li><a href="register.php">S'inscrire</a></li>
+							
 							<?php
 								if(isset($_SESSION['mail'])) {
 									if($_SESSION['vendeur'] == false && $_SESSION['mail'] != "admin@gmail.com") {
@@ -23,6 +23,9 @@
 											echo '<li><a href="modifacceuil.php">Modifier Page d\'accueil</a></li>';
 											echo '<li><a href="modifpageasso.php">Modifier Page de Présentation</a></li>';
 											echo '<li><a href="ajoutercompte.php">Ajouter compte client</a></li>';
+											echo '<li><a href="accepterListe.php">Accepter Liste</a></li>';
+											echo '<li><a href="miseEnVente.php">Jour de Vente</a></li>';
+											echo '<li><a href="vente.php">La vente</a></li>';
 
 										}else{
 
@@ -33,7 +36,7 @@
 									echo '<li><a href="deconnect.php">Se deconnecter</a></li>';
 								}
 								else {
-									echo '<li>
+									echo '<li><a href="register.php">S\'inscrire</a></li> <li>
 										<form method="get" id="formlogin" action="accueil.php" onsubmit="return verifConnect(this)">
 										<input type="email" placeholder="Adresse mail" name="user_mail" id="user_mail" />
 										<input type="password" placeholder="Mot de passe" name="user_pass" id="user_pass" />

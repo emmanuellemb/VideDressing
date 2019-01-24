@@ -33,7 +33,7 @@
     $prix = (double)$POST['price'];
     $commentaire = $POST['message'];
     
-    $req = $pdo->prepare("INSERT INTO liste (codeListe, statue) VALUES ('$code' , 'Soumise')");
+    $req = $pdo->prepare("INSERT INTO liste (codeListe, statue) VALUES ('$code' , 'soumis')");
 		$req->bindParam(1, $code);
 		$req->bindParam(2,'Soumise');
 		$req->execute();

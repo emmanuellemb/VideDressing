@@ -22,7 +22,7 @@
 
 
             ?>
-            <br />
+<br />
               <table>
               <thead> <tr> <th> <font size='20'> VENDRE  <font> </th> <th> <font size='20'>RETIRER<font> </th></tr> 
               	<tr> 

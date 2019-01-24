@@ -10,12 +10,15 @@
 
 	</head>
 
-	<body class="landing is-preload">
+<body class="landing is-preload">
             <?php
                 session_start();
+            ?>
+          
 
-               	include 'header.php';
-             ?>
+                <?php
+                    include 'header.php';
+                ?>
 
         <!-- Scripts -->
             <script src="assets/js/jquery.min.js"></script>
@@ -26,17 +29,16 @@
             <script src="assets/js/validation.js"></script>
 
 
-
 <?php
 
 
 include 'connectBD.php';
 
 
-$req = $pdo->prepare("SELECT * FROM liste NATURAL JOIN vendeur WHERE statut='soumise'");
+$req = $pdo->prepare("SELECT * FROM liste, vendeur WHERE statut='acceptee'");
 $req->execute();
 
-echo '<br><br><table>';
+echo '<br> <br><table>';
 
 while ($row = $req->fetch(PDO::FETCH_ASSOC)){
 
@@ -44,11 +46,23 @@ while ($row = $req->fetch(PDO::FETCH_ASSOC)){
 
 	echo '<tr><th>'.$row['email'].'<th>'.$row['codeVendeur'].'</th><th>'.'</th><th>'.$row['codeListe'].'</th><th>'.$row['statut'].'</th><th>';
 
-	echo "<a href=accepterListe2.php?id=".$row['codeListe']."><input type=\"submit\" value=\"Accepter\" ></a>";
+	echo "<a href=miseEnVente2.php?id=".$row['codeListe']."><input type=\"submit\" value=\"Accepter cette Liste\" ></a>";
 
-	echo '</th></tr>';
+	echo '</th><th></th></tr>';
 
-	
+	$req2 = $pdo->prepare("SELECT * FROM article WHERE codeListe=(?) ");
+	$req2 -> bindParam(1,$row['codeListe']);
+    $req2->execute();
+
+    while ($row2 = $req2->fetch(PDO::FETCH_ASSOC)){
+
+    	echo '<tr><th>'.$row2['codeArticle'].'<th>'.$row2['intitule'].'</th><th>'.'</th><th>'.$row2['prix'].'</th><th>'.$row2['statut'].'</th><th>'.$row2['commentaire'].'</th><th>';
+
+
+		echo "<a href=miseEnVente3.php?id=".$row['codeListe']."&id2=".$row2['codeArticle']."><input type=\"submit\" value=\"Vêtement non fourni\" ></a>";
+
+		echo '</th></tr>';
+    }
 
 }
 
@@ -57,5 +71,4 @@ echo '</table>';
 
 
 
-?> </body>
-</html>
+?> </body></html>
