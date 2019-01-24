@@ -43,6 +43,8 @@ CREATE TABLE IF NOT EXISTS article (
   prix int NOT NULL,
   statut varchar(50) NOT NULL,
   commentaire varchar(60),
+  taille varchar(10),
+  image longblob,
   PRIMARY KEY (codeArticle),
   KEY codeListe (codeListe)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
