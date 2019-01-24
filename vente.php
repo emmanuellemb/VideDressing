@@ -172,7 +172,7 @@
          </th></tr></thead></table>
 
 
-		<form> <font size='20'> CONSULTER</font><br><br>
+		<form> <p><font size='20'>CONSULTER</font></p><br><br>
          
          Saisissez le nom de l'acheteur pour obtenir sa liste d'achat :
 
